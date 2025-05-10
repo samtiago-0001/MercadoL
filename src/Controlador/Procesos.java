@@ -5,13 +5,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
-import modelo.Login;
+import modelo.Usuario;
 import modelo.Nodo;
 
 
 public class Procesos {
     
-    public Nodo<Login> cab;
+    public Nodo<Usuario> cab;
     public Procesos(){ cab = null; }
     //por si el Nodo esta vacio  
     public boolean getvacia(){
@@ -20,7 +20,7 @@ public class Procesos {
     //recorrer el Nodo
     public int getLonglista(){
         int cont=0; 
-        Nodo<Login> p;
+        Nodo<Usuario> p;
         if(getvacia())
             return 0;
         else{
@@ -34,10 +34,10 @@ public class Procesos {
     }
    
     //buscar el ultimo 
-    public Nodo<Login> getUltimo(){
+    public Nodo<Usuario> getUltimo(){
         if (getvacia()) return null;
                 else{ 
-                     Nodo<Login> p = cab;
+                     Nodo<Usuario> p = cab;
                      while (p.sig != null) {
                      p = p.sig;
                      
@@ -47,21 +47,21 @@ public class Procesos {
     
     }
     //antes del Nodo
-    public Nodo<Login> getAntesNodo(Nodo q){
+    public Nodo<Usuario> getAntesNodo(Nodo q){
         if(getvacia()) return null;
         else{
-            Nodo<Login> p=cab;
+            Nodo<Usuario> p=cab;
             while(p.sig!=q)
                 p=p.sig;
             return p;
         }
     }
     
-    public Nodo<Login> getusuario(Object usuario){
+    public Nodo<Usuario> getusuario(Object usuario){
         if (getvacia())
         return null;
         else{
-            Nodo<Login> b=cab;
+            Nodo<Usuario> b=cab;
             while(b!=null){
             if (b.dato.usuario.equals(usuario))
                 return b;
@@ -75,11 +75,11 @@ public class Procesos {
     }
     
     
-    public Nodo<Login> getcontraseña(Object contraseña){
+    public Nodo<Usuario> getcontraseña(Object contraseña){
         if (getvacia())
         return null;
         else{
-            Nodo<Login> b=cab;
+            Nodo<Usuario> b=cab;
             while(b!=null){
             if (b.dato.contrasena.equals(contraseña))
                 return b;
@@ -91,14 +91,14 @@ public class Procesos {
             return null;
         }
     }
-    //crear un Login
-    public Login getCrearusuario(
+    //crear un Usuario
+    public Usuario getCrearusuario(
         JTextField jtfusuario,
         JTextField jtfcontraseña
             
     ){
-        Login info; //Nuevo Investigador a crear
-        Nodo<Login> b; //Nodo para realizar busqueda usuario
+        Usuario info; //Nuevo Investigador a crear
+        Nodo<Usuario> b; //Nodo para realizar busqueda usuario
         try{
             b=getusuario(jtfusuario.getText());
             if(b!=null){
@@ -109,7 +109,7 @@ public class Procesos {
                 jtfusuario.requestFocus();
                 return null;
             }else{
-                info = new Login(
+                info = new Usuario(
                     jtfusuario.getText(),
                     jtfcontraseña.getText());
                     
@@ -127,12 +127,12 @@ public class Procesos {
         }
     }
    
-     public void setAddI(
+  /*   public void setAddI(
         JTextField jtfusuario,
         JTextField jtfcontraseña
             
     ){
-        Login inv;
+        Usuario inv;
         inv = getCrearusuario(jtfusuario, jtfcontraseña);
         
         if(inv!=null){
@@ -148,12 +148,12 @@ public class Procesos {
                 + "inicio de la lista!");
         }
 
-    }
-     public void setAddF(
+    }*/
+    /* public void setAddF(
         JTextField  jtfusuario,
         JTextField  jtfcontraseña
     ){
-        Login inv= getCrearusuario(jtfusuario, jtfcontraseña);
+        Usuario inv= getCrearusuario(jtfusuario, jtfcontraseña);
         
         if(inv!=null){
             Nodo<Login> info=new Nodo(inv);
@@ -167,15 +167,15 @@ public class Procesos {
                 "Nodo registrado satisfactoriamente al "
                 + "final de la lista!");
         }
-    }
+    }*/
      public void seteliusuarios(String usuario){
         if(getvacia())
             JOptionPane.showMessageDialog(null,
                 "La lista esta vacía! no existen "
                 + "elementos a eliminar");
         else{
-            Nodo<Login> b=getusuario(usuario);
-            Nodo<Login> a=null;
+            Nodo<Usuario> b=getusuario(usuario);
+            Nodo<Usuario> a=null;
             if(b==null){
                 JOptionPane.showMessageDialog(null, 
                     "Elemento a eliminar no existe!");
@@ -204,11 +204,11 @@ public class Procesos {
         }
     }
     
-     public void setAddNodoF(
+    /* public void setAddNodoF(
         JTextField jtfusuario,
         JTextField jtfcontraseña
     ){
-        Login info=getCrearusuario(jtfusuario, jtfcontraseña);  //Información
+        Usuario info=getCrearusuario(jtfusuario, jtfcontraseña);  //Información
         Nodo<Login> q;  //Nodo a registrar con la información
         if(info!=null){
             q = new Nodo(info);
@@ -219,13 +219,13 @@ public class Procesos {
                 p.sig=q;
             }
         }
-    }
+    }*/
      
-    public void setAddNodoI(
+  /*  public void setAddNodoI(
         JTextField jtfusuario,
         JTextField jtfcontraseña
     ){
-        Login info=getCrearusuario( jtfusuario, jtfcontraseña);  //Información
+        Usuario info=getCrearusuario( jtfusuario, jtfcontraseña);  //Información
         Nodo<Login> q;  //Nodo a registrar con la información
         if(info!=null){
             q = new Nodo(info);
@@ -236,7 +236,7 @@ public class Procesos {
                 cab=q;
             }
         }
-    } 
+    }*/ 
      
  
    

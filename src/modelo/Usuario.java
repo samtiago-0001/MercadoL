@@ -1,9 +1,9 @@
 package modelo;
 
-public class Login {
+public class Usuario {
      public String usuario;
      public String contrasena;
-    public Login( String usuario , String contrasena ){
+    public Usuario( String usuario , String contrasena ){
     }
     
     public String getusuario(){
