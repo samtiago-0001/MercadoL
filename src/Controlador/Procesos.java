@@ -1,6 +1,7 @@
 
 package controlador;
 
+import Controlador.Login;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
@@ -92,11 +93,7 @@ public class Procesos {
         }
     }
     //crear un Usuario
-    public Usuario getCrearusuario(
-        JTextField jtfusuario,
-        JTextField jtfcontraseña
-            
-    ){
+    public Usuario getCrearusuario( JTextField jtfusuario, JTextField jtfcontraseña){
         Usuario info; //Nuevo Investigador a crear
         Nodo<Usuario> b; //Nodo para realizar busqueda usuario
         try{
