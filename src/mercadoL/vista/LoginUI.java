@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package vista;
-import Controlador.Login;
-import modelo.Usuario;
+package mercadoL.vista;
+import mercadoL.controlador.Login;
+import mercadoL.modelo.Usuario;
 
 /**
  *
@@ -161,10 +161,24 @@ public class LoginUI extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         Usuario usuario = new Usuario(jtfUsuario.getText(), String.valueOf(jpfContrasena.getPassword()));
-        Login login =  new Login();
-        login.crearUsuario(usuario);
+        Login login = new Login();
+        redireccionLogin(login.login(usuario));
     }//GEN-LAST:event_btnLoginActionPerformed
 
+    private void redireccionLogin(Usuario usuario){
+        if(usuario != null){
+            CatalogoUI catalogoUi = new CatalogoUI();
+            catalogoUi.setVisible(true);
+            catalogoUi.pack();
+            catalogoUi.setLocationRelativeTo(null);
+            this.dispose();
+        }else{
+            DialogUI dialogUI = new DialogUI(this, true, "Usuario no encontrado");
+            dialogUI.setVisible(true);
+            
+        }
+    }
+    
     private void btnCrearUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearUsuarioActionPerformed
         CrearUsuarioUI crearUsuario = new CrearUsuarioUI();
         crearUsuario.setVisible(true);
@@ -175,15 +189,14 @@ public class LoginUI extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LoginUI().setVisible(true);
             }
         });
     }
+    */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearUsuario;
