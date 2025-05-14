@@ -3,6 +3,7 @@ package mercadoL;
 import mercadoL.modelo.Nodo;
 import mercadoL.modelo.Usuario;
 import mercadoL.modelo.Zapatilla;
+import mercadoL.vista.CatalogoUI;
 import mercadoL.vista.SplashUI;
 
 public class Main {
@@ -41,7 +42,8 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new SplashUI().setVisible(true);
+                //new SplashUI().setVisible(true);
+                new CatalogoUI().setVisible(true);
             }
         });
     }

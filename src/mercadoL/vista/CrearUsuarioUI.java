@@ -44,6 +44,12 @@ public class CrearUsuarioUI extends javax.swing.JFrame {
 
         jtfUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jtfUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        jtfUsuario.setText("user");
+        jtfUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfUsuarioActionPerformed(evt);
+            }
+        });
 
         btnCrearUsuario.setBackground(new java.awt.Color(0, 102, 102));
         btnCrearUsuario.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -70,6 +76,7 @@ public class CrearUsuarioUI extends javax.swing.JFrame {
 
         jpfContrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jpfContrasena.setForeground(new java.awt.Color(102, 102, 102));
+        jpfContrasena.setText("1234");
         jpfContrasena.setToolTipText("Contraseña");
 
         jLabel4.setText("Ya tengo una cuenta");
@@ -105,11 +112,8 @@ public class CrearUsuarioUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelCrearUsuarioLayout.createSequentialGroup()
-                            .addGroup(jPanelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(138, 138, 138))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanelCrearUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jpfContrasena, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtfUsuario, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -176,6 +180,10 @@ public class CrearUsuarioUI extends javax.swing.JFrame {
         loginUI.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void jtfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfUsuarioActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearUsuario;

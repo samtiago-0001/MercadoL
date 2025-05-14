@@ -46,6 +46,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         jtfUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jtfUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        jtfUsuario.setText("user");
 
         btnLogin.setBackground(new java.awt.Color(0, 102, 102));
         btnLogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -72,6 +73,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         jpfContrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jpfContrasena.setForeground(new java.awt.Color(102, 102, 102));
+        jpfContrasena.setText("1234");
         jpfContrasena.setToolTipText("Contraseña");
 
         jLabel4.setText("No tengo una cuenta");
