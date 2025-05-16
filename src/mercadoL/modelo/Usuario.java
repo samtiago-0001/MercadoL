@@ -66,5 +66,5 @@ public class Usuario {
         }
         return Objects.equals(this.contrasena, other.contrasena);
     }
-
+  
 }
