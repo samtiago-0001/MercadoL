@@ -22,6 +22,7 @@ public class Main {
         Nodo<Zapatilla> producto008 = new Nodo(new Zapatilla(8, "Nike Mercurial", 600000, "/mercadoL/imagen/008.png"));
         Nodo<Zapatilla> producto009 = new Nodo(new Zapatilla(9, "Nike Vapormax", 1200000, "/mercadoL/imagen/009.png"));
         
+        
         producto001.sig = producto002;
         producto002.sig = producto003;
         producto003.sig = producto004;
