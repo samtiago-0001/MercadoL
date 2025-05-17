@@ -12,7 +12,7 @@ public class Nodo<I> {
     public Nodo<I> getUltimo() {
         Nodo aux = this;
         
-        while (null != aux) {
+        while (null != aux && null != aux.sig) {
             aux = aux.sig;
         }
         
