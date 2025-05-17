@@ -7,6 +7,7 @@ public class Usuario {
     private String usuario;
     private String contrasena;
     private Nodo<Zapatilla> favoritos = null;
+    private Nodo<Zapatilla> hitoricoCompra = null;
 
     public Usuario() {
     }

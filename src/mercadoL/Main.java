@@ -9,7 +9,11 @@ import mercadoL.vista.SplashUI;
 public class Main {
 
     public static Nodo<Usuario> usuariosRegistrados = null;
+    public static Usuario usuario = null;
+    public static Nodo<Zapatilla> carrito = null;
+     
     public static Nodo<Zapatilla> catalogo = null;
+   
     
     static {
         Nodo<Zapatilla> producto001 = new Nodo(new Zapatilla(1, "Nike Cortez", 590700, "/mercadoL/imagen/001.png"));
@@ -43,8 +47,8 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                //new SplashUI().setVisible(true);
-                new CatalogoUI().setVisible(true);
+                new SplashUI().setVisible(true);
+                //new CatalogoUI().setVisible(true);
             }
         });
     }

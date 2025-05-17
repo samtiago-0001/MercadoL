@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package mercadoL.vista;
+import mercadoL.Main;
 import mercadoL.controlador.Login;
 import mercadoL.modelo.Usuario;
 
@@ -78,7 +79,7 @@ public class LoginUI extends javax.swing.JFrame {
 
         jLabel4.setText("No tengo una cuenta");
 
-        btnCrearUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        btnCrearUsuario.setBackground(new java.awt.Color(230, 229, 229));
         btnCrearUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnCrearUsuario.setForeground(new java.awt.Color(0, 102, 102));
         btnCrearUsuario.setText("Crear");
@@ -169,6 +170,7 @@ public class LoginUI extends javax.swing.JFrame {
 
     private void redireccionLogin(Usuario usuario){
         if(usuario != null){
+            Main.usuario = usuario;
             CatalogoUI catalogoUi = new CatalogoUI();
             catalogoUi.setVisible(true);
             catalogoUi.pack();

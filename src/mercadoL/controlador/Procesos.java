@@ -31,17 +31,18 @@ public class Procesos {
     }
    
     //buscar el ultimo 
-    public Nodo<Usuario> getUltimo(){
-        if (getvacia()) return null;
-                else{ 
-                     Nodo<Usuario> p = cab;
-                     while (p.sig != null) {
-                     p = p.sig;
-                     
-                }
+    public Nodo<Usuario> getUltimo() {
+        if (getvacia()) {
+            return null;
+        } else {
+            Nodo<Usuario> p = cab;
+            while (p.sig != null) {
+                p = p.sig;
+
+            }
             return p;
         }
-    
+
     }
     //antes del Nodo
     public Nodo<Usuario> getAntesNodo(Nodo q){
