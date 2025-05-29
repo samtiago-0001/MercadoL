@@ -9,27 +9,17 @@ package mercadoL.modelo;
  * @author SANTIAGO SAAVEDRA
  */
 public class Zapatilla {
-    int id;
-    String nombre;
-    double precio;
-    String imagen;
+    private String nombre;
+    private double precio;
+    private String imagen;
 
     public Zapatilla() {
     }
 
-    public Zapatilla(int id, String nombre, double precio, String imagen) {
-        this.id = id;
+    public Zapatilla(String nombre, double precio, String imagen) {
         this.nombre = nombre;
         this.precio = precio;
         this.imagen = imagen;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {

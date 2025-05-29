@@ -7,7 +7,7 @@ public class Usuario {
     private String usuario;
     private String contrasena;
     private Nodo<Zapatilla> favoritos = null;
-    private Nodo<Zapatilla> hitoricoCompra = null;
+    private Cola hitoricoCompra = null;
 
     public Usuario() {
     }
@@ -42,6 +42,14 @@ public class Usuario {
         }
     }
 
+    public Cola getHitoricoCompra() {
+        return hitoricoCompra;
+    }
+
+    public void setHitoricoCompra(Cola hitoricoCompra) {
+        this.hitoricoCompra = hitoricoCompra;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;

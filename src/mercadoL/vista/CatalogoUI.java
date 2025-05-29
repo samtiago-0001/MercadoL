@@ -19,12 +19,12 @@ public class CatalogoUI extends javax.swing.JFrame {
     public CatalogoUI() {
         initComponents();
         redimensionImagenesCatalogo();
-        
+
         if (Main.usuario != null) {
             jLabelNombreUsuario.setText(Main.usuario.getUsuario());
         }
     }
-            
+
     private void redimensionImagenesCatalogo() {
         int width = 150;
         int height = 150;
@@ -39,14 +39,14 @@ public class CatalogoUI extends javax.swing.JFrame {
         jLabel009.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/mercadoL/imagenes/009.jpg")).getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH)));
         jLabel010.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/mercadoL/imagenes/010.png")).getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH)));
 
-       // jLabel1.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/mercadoL/icon/agregar2.png")).getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH)));
+        // jLabel1.setIcon(new ImageIcon(new ImageIcon(getClass().getResource("/mercadoL/icon/agregar2.png")).getImage().getScaledInstance(25, 25, Image.SCALE_SMOOTH)));
     }
-    
+
     private void agregarProductosAlCarrito(Nodo<Zapatilla> zapatilla) {
         Catalogo catalogo = new Catalogo();
         catalogo.agregarACarrito(zapatilla);
     }
- 
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,6 +136,7 @@ public class CatalogoUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Catalogo");
@@ -946,6 +947,14 @@ public class CatalogoUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/mercadoL/icon/historico.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelContenedorLayout = new javax.swing.GroupLayout(jPanelContenedor);
         jPanelContenedor.setLayout(jPanelContenedorLayout);
         jPanelContenedorLayout.setHorizontalGroup(
@@ -958,9 +967,11 @@ public class CatalogoUI extends javax.swing.JFrame {
                     .addGroup(jPanelContenedorLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(jLabelShoes, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 322, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
+                        .addGap(27, 27, 27)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(29, 29, 29)
                         .addComponent(jLabelNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -983,9 +994,11 @@ public class CatalogoUI extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addGroup(jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabelShoes)
-                            .addGroup(jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanelContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelContenedorLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabelNombreUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1018,26 +1031,26 @@ public class CatalogoUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-       Nodo<Zapatilla> producto003 = new Nodo(new Zapatilla(3, jLabel13.getText(), Double.parseDouble(label5.getText().replace(".", "")), "/mercadoL/imagen/003.png"));
-       agregarProductosAlCarrito(producto003);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto003 = new Nodo(new Zapatilla(jLabel13.getText(), Double.parseDouble(label5.getText().replace(".", "")), "/mercadoL/imagen/003.png"));
+        agregarProductosAlCarrito(producto003);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-       Nodo<Zapatilla> producto001 = new Nodo(new Zapatilla(1, jLabel9.getText(), Double.parseDouble(label3.getText().replace(".", "")), "/mercadoL/imagen/001.png"));
-       agregarProductosAlCarrito(producto001);
+        Nodo<Zapatilla> producto001 = new Nodo(new Zapatilla(jLabel9.getText(), Double.parseDouble(label3.getText().replace(".", "")), "/mercadoL/imagen/001.png"));
+        agregarProductosAlCarrito(producto001);
         System.out.println("Agregado");
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-         Nodo<Zapatilla> producto005 = new Nodo(new Zapatilla(5, jLabel17.getText(), Double.parseDouble(label7.getText().replace(".", "")), "/mercadoL/imagen/005.png"));
-       agregarProductosAlCarrito(producto005);
+        Nodo<Zapatilla> producto005 = new Nodo(new Zapatilla(jLabel17.getText(), Double.parseDouble(label7.getText().replace(".", "")), "/mercadoL/imagen/005.png"));
+        agregarProductosAlCarrito(producto005);
         System.out.println("Agregado");
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
-         Nodo<Zapatilla> producto001 = new Nodo(new Zapatilla(1, jLabel9.getText(), Double.parseDouble(label3.getText().replace(".", "")), "/mercadoL/imagen/001.png"));
-       agregarProductosAlCarrito(producto001);
+        Nodo<Zapatilla> producto001 = new Nodo(new Zapatilla(jLabel9.getText(), Double.parseDouble(label3.getText().replace(".", "")), "/mercadoL/imagen/001.png"));
+        agregarProductosAlCarrito(producto001);
     }//GEN-LAST:event_jLabel16MouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -1057,95 +1070,104 @@ public class CatalogoUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        Nodo<Zapatilla> producto002 = new Nodo(new Zapatilla(2, jLabel11.getText(), Double.parseDouble(label4.getText().replace(".", "")), "/mercadoL/imagen/002.png"));
+        Nodo<Zapatilla> producto002 = new Nodo(new Zapatilla(jLabel11.getText(), Double.parseDouble(label4.getText().replace(".", "")), "/mercadoL/imagen/002.png"));
         agregarProductosAlCarrito(producto002);
         System.out.println("Agregado");
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        Nodo<Zapatilla> producto003 = new Nodo(new Zapatilla(3, jLabel13.getText(), Double.parseDouble(label5.getText().replace(".", "")), "/mercadoL/imagen/003.png"));
-       agregarProductosAlCarrito(producto003);
+        Nodo<Zapatilla> producto003 = new Nodo(new Zapatilla(jLabel13.getText(), Double.parseDouble(label5.getText().replace(".", "")), "/mercadoL/imagen/003.png"));
+        agregarProductosAlCarrito(producto003);
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
-       Nodo<Zapatilla> producto002 = new Nodo(new Zapatilla(2, jLabel11.getText(), Double.parseDouble(label4.getText().replace(".", "")), "/mercadoL/imagen/002.png"));
+        Nodo<Zapatilla> producto002 = new Nodo(new Zapatilla(jLabel11.getText(), Double.parseDouble(label4.getText().replace(".", "")), "/mercadoL/imagen/002.png"));
         agregarProductosAlCarrito(producto002);
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
-         Nodo<Zapatilla> producto006 = new Nodo(new Zapatilla(6, jLabel19.getText(), Double.parseDouble(label8.getText().replace(".", "")), "/mercadoL/imagen/006.png"));
-       agregarProductosAlCarrito(producto006);
+        Nodo<Zapatilla> producto006 = new Nodo(new Zapatilla(jLabel19.getText(), Double.parseDouble(label8.getText().replace(".", "")), "/mercadoL/imagen/006.png"));
+        agregarProductosAlCarrito(producto006);
     }//GEN-LAST:event_jLabel22MouseClicked
 
     private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
-       Nodo<Zapatilla> producto005 = new Nodo(new Zapatilla(5, jLabel17.getText(), Double.parseDouble(label7.getText().replace(".", "")), "/mercadoL/imagen/005.png"));
-       agregarProductosAlCarrito(producto005);
+        Nodo<Zapatilla> producto005 = new Nodo(new Zapatilla(jLabel17.getText(), Double.parseDouble(label7.getText().replace(".", "")), "/mercadoL/imagen/005.png"));
+        agregarProductosAlCarrito(producto005);
     }//GEN-LAST:event_jLabel24MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        Nodo<Zapatilla> producto004 = new Nodo(new Zapatilla(4, jLabel15.getText(), Double.parseDouble(label6.getText().replace(".", "")), "/mercadoL/imagen/004.png"));
-       agregarProductosAlCarrito(producto004);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto004 = new Nodo(new Zapatilla(jLabel15.getText(), Double.parseDouble(label6.getText().replace(".", "")), "/mercadoL/imagen/004.png"));
+        agregarProductosAlCarrito(producto004);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        Nodo<Zapatilla> producto006 = new Nodo(new Zapatilla(6, jLabel19.getText(), Double.parseDouble(label8.getText().replace(".", "")), "/mercadoL/imagen/006.png"));
-       agregarProductosAlCarrito(producto006);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto006 = new Nodo(new Zapatilla(jLabel19.getText(), Double.parseDouble(label8.getText().replace(".", "")), "/mercadoL/imagen/006.png"));
+        agregarProductosAlCarrito(producto006);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel10MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-       Nodo<Zapatilla> producto007 = new Nodo(new Zapatilla(7, jLabel21.getText(), Double.parseDouble(label9.getText().replace(".", "")), "/mercadoL/imagen/007.png"));
-       agregarProductosAlCarrito(producto007);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto007 = new Nodo(new Zapatilla(jLabel21.getText(), Double.parseDouble(label9.getText().replace(".", "")), "/mercadoL/imagen/007.png"));
+        agregarProductosAlCarrito(producto007);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-         Nodo<Zapatilla> producto008 = new Nodo(new Zapatilla(8, jLabel25.getText(), Double.parseDouble(label11.getText().replace(".", "")), "/mercadoL/imagen/008.png"));
-       agregarProductosAlCarrito(producto008);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto008 = new Nodo(new Zapatilla(jLabel25.getText(), Double.parseDouble(label11.getText().replace(".", "")), "/mercadoL/imagen/008.png"));
+        agregarProductosAlCarrito(producto008);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-       Nodo<Zapatilla> producto009 = new Nodo(new Zapatilla(9, jLabel23.getText(), Double.parseDouble(label10.getText().replace(".", "")), "/mercadoL/imagen/009.png"));
-       agregarProductosAlCarrito(producto009);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto009 = new Nodo(new Zapatilla(jLabel23.getText(), Double.parseDouble(label10.getText().replace(".", "")), "/mercadoL/imagen/009.png"));
+        agregarProductosAlCarrito(producto009);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        Nodo<Zapatilla> producto010 = new Nodo(new Zapatilla(10, jLabel27.getText(), Double.parseDouble(label12.getText().replace(".", "")), "/mercadoL/imagen/010.png"));
-       agregarProductosAlCarrito(producto010);
-       System.out.println("Agregado");
+        Nodo<Zapatilla> producto010 = new Nodo(new Zapatilla(jLabel27.getText(), Double.parseDouble(label12.getText().replace(".", "")), "/mercadoL/imagen/010.png"));
+        agregarProductosAlCarrito(producto010);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
-        Nodo<Zapatilla> producto004 = new Nodo(new Zapatilla(4, jLabel15.getText(), Double.parseDouble(label6.getText().replace(".", "")), "/mercadoL/imagen/004.png"));
-       agregarProductosAlCarrito(producto004);
+        Nodo<Zapatilla> producto004 = new Nodo(new Zapatilla(jLabel15.getText(), Double.parseDouble(label6.getText().replace(".", "")), "/mercadoL/imagen/004.png"));
+        agregarProductosAlCarrito(producto004);
     }//GEN-LAST:event_jLabel31MouseClicked
 
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
-         Nodo<Zapatilla> producto007 = new Nodo(new Zapatilla(7, jLabel21.getText(), Double.parseDouble(label9.getText().replace(".", "")), "/mercadoL/imagen/007.png"));
-       agregarProductosAlCarrito(producto007);
+        Nodo<Zapatilla> producto007 = new Nodo(new Zapatilla(jLabel21.getText(), Double.parseDouble(label9.getText().replace(".", "")), "/mercadoL/imagen/007.png"));
+        agregarProductosAlCarrito(producto007);
     }//GEN-LAST:event_jLabel26MouseClicked
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
-        Nodo<Zapatilla> producto008 = new Nodo(new Zapatilla(8, jLabel25.getText(), Double.parseDouble(label11.getText().replace(".", "")), "/mercadoL/imagen/008.png"));
-       agregarProductosAlCarrito(producto008);
+        Nodo<Zapatilla> producto008 = new Nodo(new Zapatilla(jLabel25.getText(), Double.parseDouble(label11.getText().replace(".", "")), "/mercadoL/imagen/008.png"));
+        agregarProductosAlCarrito(producto008);
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
-       Nodo<Zapatilla> producto009 = new Nodo(new Zapatilla(9, jLabel23.getText(), Double.parseDouble(label10.getText().replace(".", "")), "/mercadoL/imagen/009.png"));
-       agregarProductosAlCarrito(producto009);
+        Nodo<Zapatilla> producto009 = new Nodo(new Zapatilla(jLabel23.getText(), Double.parseDouble(label10.getText().replace(".", "")), "/mercadoL/imagen/009.png"));
+        agregarProductosAlCarrito(producto009);
     }//GEN-LAST:event_jLabel28MouseClicked
 
     private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
-        Nodo<Zapatilla> producto010 = new Nodo(new Zapatilla(10, jLabel27.getText(), Double.parseDouble(label12.getText().replace(".", "")), "/mercadoL/imagen/010.png"));
-       agregarProductosAlCarrito(producto010);
+        Nodo<Zapatilla> producto010 = new Nodo(new Zapatilla(jLabel27.getText(), Double.parseDouble(label12.getText().replace(".", "")), "/mercadoL/imagen/010.png"));
+        agregarProductosAlCarrito(producto010);
     }//GEN-LAST:event_jLabel29MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        Historial historial = new Historial();
+        historial.setVisible(true);
+        historial.pack();
+        historial.setLocationRelativeTo(null);
+        this.dispose();
+    }//GEN-LAST:event_jButton3MouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel001;
     private javax.swing.JLabel jLabel002;
     private javax.swing.JLabel jLabel003;
