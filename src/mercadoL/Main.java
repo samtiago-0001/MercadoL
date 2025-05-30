@@ -1,11 +1,8 @@
 package mercadoL;
 
-import mercadoL.modelo.Cola;
-import mercadoL.modelo.Historico;
 import mercadoL.modelo.Nodo;
 import mercadoL.modelo.Usuario;
 import mercadoL.modelo.Zapatilla;
-import mercadoL.vista.CatalogoUI;
 import mercadoL.vista.SplashUI;
 
 public class Main {

@@ -13,7 +13,7 @@ public class Catalogo {
     public void agregarACarrito(Nodo<Zapatilla> zapatilla) {
         if (Main.carrito == null) {
             Main.carrito = zapatilla;
-        }else{
+        } else {
             Nodo<Zapatilla> ultimo = Main.carrito.getUltimo();
             if (null == ultimo) {
                 ultimo = zapatilla;
@@ -21,5 +21,10 @@ public class Catalogo {
                 ultimo.sig = zapatilla;
             }
         }
+
+    }
+
+    public void agregarAFavoritos(Nodo<Zapatilla> zapatilla) {
+        Main.usuario.agregarComoFavorito(zapatilla.dato);
     }
 }

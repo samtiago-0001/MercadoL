@@ -4,6 +4,13 @@
  */
 package mercadoL.vista;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+import javax.swing.table.DefaultTableModel;
+import mercadoL.Main;
+import mercadoL.modelo.Nodo;
+import mercadoL.modelo.Zapatilla;
+
 public class FavoritosUI extends javax.swing.JFrame {
 
     /**
@@ -11,8 +18,33 @@ public class FavoritosUI extends javax.swing.JFrame {
      */
     public FavoritosUI() {
         initComponents();
+        cargarFavoritos();
     }
 
+    private void cargarFavoritos() {
+        DefaultTableModel modelo = new DefaultTableModel();
+
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Precio");
+
+        agregarDatosTablaFavoritos(modelo);
+        jTableFavoritos.setModel(modelo);
+    }
+
+    private void agregarDatosTablaFavoritos(DefaultTableModel modelo) {
+        Nodo<Zapatilla> nodoFavoritos = Main.usuario.getFavoritos();
+        while (nodoFavoritos != null) {
+            modelo.addRow(new Object[]{nodoFavoritos.dato.getNombre(), formatoNumero(nodoFavoritos.dato.getPrecio())});
+            nodoFavoritos = nodoFavoritos.sig;
+        }
+    }
+
+    private String formatoNumero(Double cantidad) {
+        NumberFormat formatoPais = NumberFormat.getCurrencyInstance(Locale.US);
+        String numeroFormateado = formatoPais.format(cantidad);
+
+        return numeroFormateado;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,7 +59,7 @@ public class FavoritosUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableFavoritos = new javax.swing.JTable();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -67,24 +99,24 @@ public class FavoritosUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jTable1.setBackground(new java.awt.Color(204, 204, 204));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableFavoritos.setBackground(new java.awt.Color(204, 204, 204));
+        jTableFavoritos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Producto", "Cantidad", "Precio"
+                "Producto", "Precio"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableFavoritos);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -154,6 +186,6 @@ public class FavoritosUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableFavoritos;
     // End of variables declaration//GEN-END:variables
 }

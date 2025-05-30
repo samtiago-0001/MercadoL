@@ -42,6 +42,10 @@ public class Usuario {
         }
     }
 
+    public Nodo<Zapatilla> getFavoritos() {
+        return favoritos;
+    }
+
     public Cola getHitoricoCompra() {
         return hitoricoCompra;
     }
