@@ -58,7 +58,6 @@ public class Cola {
             finalCola = getFinal() + 1;
             datosCola[getFinal()] = dato;
         }
-        System.out.println(getFinal());
     }
 
     public void quitar() {

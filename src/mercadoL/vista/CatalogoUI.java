@@ -1082,21 +1082,25 @@ public class CatalogoUI extends javax.swing.JFrame {
     private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
         Nodo<Zapatilla> producto003 = new Nodo(new Zapatilla(jLabel13.getText(), Double.parseDouble(label5.getText().replace(".", "")), "/mercadoL/imagen/003.png"));
         agregarProductosAFavoritos(producto003);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel18MouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
         Nodo<Zapatilla> producto002 = new Nodo(new Zapatilla(jLabel11.getText(), Double.parseDouble(label4.getText().replace(".", "")), "/mercadoL/imagen/002.png"));
         agregarProductosAFavoritos(producto002);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel20MouseClicked
 
     private void jLabel22MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel22MouseClicked
         Nodo<Zapatilla> producto006 = new Nodo(new Zapatilla(jLabel19.getText(), Double.parseDouble(label8.getText().replace(".", "")), "/mercadoL/imagen/006.png"));
         agregarProductosAFavoritos(producto006);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel22MouseClicked
 
     private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
         Nodo<Zapatilla> producto005 = new Nodo(new Zapatilla(jLabel17.getText(), Double.parseDouble(label7.getText().replace(".", "")), "/mercadoL/imagen/005.png"));
         agregarProductosAFavoritos(producto005);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel24MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
@@ -1143,21 +1147,25 @@ public class CatalogoUI extends javax.swing.JFrame {
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
         Nodo<Zapatilla> producto007 = new Nodo(new Zapatilla(jLabel21.getText(), Double.parseDouble(label9.getText().replace(".", "")), "/mercadoL/imagen/007.png"));
         agregarProductosAFavoritos(producto007);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel26MouseClicked
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
         Nodo<Zapatilla> producto008 = new Nodo(new Zapatilla(jLabel25.getText(), Double.parseDouble(label11.getText().replace(".", "")), "/mercadoL/imagen/008.png"));
         agregarProductosAFavoritos(producto008);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         Nodo<Zapatilla> producto009 = new Nodo(new Zapatilla(jLabel23.getText(), Double.parseDouble(label10.getText().replace(".", "")), "/mercadoL/imagen/009.png"));
         agregarProductosAFavoritos(producto009);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel28MouseClicked
 
     private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
         Nodo<Zapatilla> producto010 = new Nodo(new Zapatilla(jLabel27.getText(), Double.parseDouble(label12.getText().replace(".", "")), "/mercadoL/imagen/010.png"));
         agregarProductosAFavoritos(producto010);
+        System.out.println("Agregado");
     }//GEN-LAST:event_jLabel29MouseClicked
 
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked

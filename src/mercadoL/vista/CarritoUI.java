@@ -32,8 +32,6 @@ public class CarritoUI extends javax.swing.JFrame {
         modelo.addColumn("Total");
 
         agregarDatosTablaCarrito(modelo);
-        //modelo.addRow(new Object[]{ "nombre del articulo",1,40.000});
-
         jTable2.setModel(modelo);
     }
 

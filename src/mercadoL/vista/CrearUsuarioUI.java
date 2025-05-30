@@ -44,7 +44,6 @@ public class CrearUsuarioUI extends javax.swing.JFrame {
 
         jtfUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jtfUsuario.setForeground(new java.awt.Color(102, 102, 102));
-        jtfUsuario.setText("user");
         jtfUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfUsuarioActionPerformed(evt);
@@ -76,7 +75,6 @@ public class CrearUsuarioUI extends javax.swing.JFrame {
 
         jpfContrasena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jpfContrasena.setForeground(new java.awt.Color(102, 102, 102));
-        jpfContrasena.setText("1234");
         jpfContrasena.setToolTipText("Contraseña");
 
         jLabel4.setText("Ya tengo una cuenta");

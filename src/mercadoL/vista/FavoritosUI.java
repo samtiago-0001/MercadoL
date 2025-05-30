@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package mercadoL.vista;
 
 import java.text.NumberFormat;
@@ -116,6 +112,11 @@ public class FavoritosUI extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTableFavoritos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableFavoritosMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableFavoritos);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -177,6 +178,10 @@ public class FavoritosUI extends javax.swing.JFrame {
         catalogoUi.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTableFavoritosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableFavoritosMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTableFavoritosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
